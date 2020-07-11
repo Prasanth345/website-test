@@ -1,0 +1,119 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Ava</title>
+</head>
+
+<body class="bg-light">
+
+  <!-- Starting Navbar -->
+  
+  <nav class="navbar navbar-expand-lg navbar-dark bg-info sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">CHDTECH</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse flex-row-reverse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Service</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Blog</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- End Navbar -->
+
+  <!-- Starting Cards -->
+
+  <div class="container mt-8">
+    <h3 class="text-center mb-4 mt-4">TEAM</h3>
+    <p class="text-center mb-4">The process of learning to work together effectively is known as Team Work.</p>
+    <div class="container mt-3">
+      <div class="row">
+        {% for name in names %}  <!-- using jinja tag for loop -->
+        <div class="col-sm-6 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title text-primary">
+                <small class="text-muted px-1">
+                  <i class="fa fa-ravelry fa-2x" aria-hidden="true"></i>
+                </small>
+                {{name.name}} <br>
+                <small class="text-muted pl-5"> 
+                  Age : {{name.age}} <!-- using jinja tag to print an value -->
+                </small>
+              </h5>
+              <div class="px-5">
+                <hr class="border-info">
+                <small class="text-muted">The process of learning to work together effectively is known as Team
+                  Work.</small>
+              </div>
+              <div class="mt-2 px-5">
+                <a class="mr-2" href="#" ><i class="fa fa-lg fa-facebook-square"></i></a>
+                <a class="mr-2" href="#" ><i class="fa fa-lg fa-twitter-square"></i></a>
+                <a class="mr-2" href="#" ><i class="fa fa-lg fa-whatsapp"></i></a>
+                <a class="mr-2" href="#" ><i class="fa fa-lg fa-linkedin-square"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <!-- End Cards -->
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+  integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+</html>
